@@ -278,13 +278,6 @@
               <span class="text-zinc-400 hidden md:inline">Diagnóstico Antes de Substituição</span>
             </div>
 
-            <!-- Sound Toggle Button -->
-            <button id="sound-toggle-btn" class="flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors cursor-pointer py-1 px-3 rounded-full bg-white/5 border border-white/10">
-              <span id="sound-icon">
-                <svg class="w-3.5 h-3.5 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
-              </span>
-              <span id="sound-text">Vídeo Mudo</span>
-            </button>
           </div>
         </div>
       </section>
@@ -898,25 +891,6 @@
         window.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') closeDrawer();
         });
-
-        // 4. Video Sound Toggle
-        const heroVideo = document.getElementById('hero-video');
-        const soundBtn = document.getElementById('sound-toggle-btn');
-        const soundIcon = document.getElementById('sound-icon');
-        const soundText = document.getElementById('sound-text');
-
-        if (soundBtn && heroVideo) {
-          soundBtn.addEventListener('click', () => {
-            heroVideo.muted = !heroVideo.muted;
-            if (heroVideo.muted) {
-              soundIcon.innerHTML = `<svg class="w-3.5 h-3.5 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>`;
-              soundText.textContent = 'Vídeo Mudo';
-            } else {
-              soundIcon.innerHTML = `<svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
-              soundText.textContent = 'Áudio Ativo';
-            }
-          });
-        }
 
         // 5. Services Data & Dynamic Selection
         const servicesData = [
